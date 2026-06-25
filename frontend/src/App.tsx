@@ -9,7 +9,7 @@ function App() {
     // Vite proxy catches '/api' and routes it to http://localhost:8080/api/hello
     axios.get('/api/hello')
       .then(response => {
-        setBackendMessage(response.data.message)
+        setBackendMessage(response.data)
       })
       .catch(error => {
         console.error("Error connecting to backend:", error)
