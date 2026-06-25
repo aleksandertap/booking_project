@@ -1,0 +1,44 @@
+# ==========================================
+# 1. Root / Environment Secrets
+# ==========================================
+.env
+.env.local
+.env.*.local
+
+# ==========================================
+# 2. IntelliJ IDEA / IDE Files
+# ==========================================
+.idea/
+*.iml
+*.iws
+*.ipr
+.classpath
+.project
+.settings/
+bin/
+
+# ==========================================
+# 3. Java Backend (Maven) Build Artifacts
+# ==========================================
+backend/target/
+backend/*.jar
+backend/*.war
+backend/*.ear
+backend/.mvn/wrapper/
+
+# ==========================================
+# 4. React Frontend (Node/Vite) Artifacts
+# ==========================================
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.eslintcache
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# ==========================================
+# 5. OS Specific Files
+# ==========================================
+.DS_Store
+Thumbs.db
