@@ -18,8 +18,23 @@ public class FlightController {
         return flightService.getAllFlights();
     }
 
+    @GetMapping("/{id}")
+    public Flight getFlight(@PathVariable Integer id){
+        return flightService.getOneFlight(id);
+    }
+
     @PostMapping
     public Flight createFlight(@RequestBody Flight flight){
         return flightService.saveFlight(flight);
+    }
+
+    @PutMapping("/{id}")
+    public Flight updateFlight(@PathVariable Integer id, @RequestBody Flight flight){
+        return flightService.updateFlight(id, flight);
+    }
+
+    @DeleteMapping("/{id}")
+    public String deleteFlight(@PathVariable Integer id){
+        return flightService.deleteFlight(id);
     }
 }
