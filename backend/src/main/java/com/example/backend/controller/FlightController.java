@@ -37,4 +37,9 @@ public class FlightController {
     public String deleteFlight(@PathVariable Integer id){
         return flightService.deleteFlight(id);
     }
+
+    @DeleteMapping()
+    public void deleteAllFlights(){
+        flightService.deleteAllFlights();
+    }
 }

@@ -42,4 +42,8 @@ public class FlightService {
 
         return "flight deleted with id: " + id;
     }
+
+    public void deleteAllFlights(){
+        flightRepository.deleteAll();
+    }
 }

@@ -25,8 +25,9 @@ public class Flight {
     @Column(nullable = false, length = 50)
     private String flightProvider;
 
-    @Column(nullable = false, length = 40)
-    private String origin;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 10)
+    private City origin;
 
     @Column(nullable = false, length = 40)
     private String destination;
@@ -45,4 +46,8 @@ public class Flight {
 
     @Column(length = 10)
     private String gate;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, name = "flight_status", length = 20)
+    private FlightStatus status = FlightStatus.EMPTY;
 }
