@@ -41,7 +41,11 @@ public class Flight {
     @Column(nullable = false)
     private Integer price;
 
-    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, name = "plane_size")
+    private PlaneSize planeSize;
+
+    @Column(nullable = false, name = "available_seats")
     private Integer availableSeats;
 
     @Column(length = 10)
@@ -50,4 +54,11 @@ public class Flight {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, name = "flight_status", length = 20)
     private FlightStatus status = FlightStatus.EMPTY;
+
+    @PrePersist
+    protected void onCreate(){
+        if(planeSize != null){
+            this.availableSeats = this.planeSize.getSize();
+        }
+    }
 }
